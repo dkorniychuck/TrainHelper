@@ -1,0 +1,46 @@
+﻿<Window x:Class="Kursach.PersonalAccount_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursach"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="PersonalAccount_Window" Height="600" Width="800">
+    <Grid Background="#ffdadada">
+        <Border Background="White" MinWidth="400" Padding="30"  Margin="100 80 100 80" VerticalAlignment="Center" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Особистий кабінет" FontSize="28" FontWeight="Bold" FontFamily="Tahoma"></TextBlock>
+                <Grid>
+                    <Label x:Name="UserLogin" Content="" FontSize="16" Margin="0 10 0 10" HorizontalAlignment="Left" Width="100" FontWeight="Bold"/>
+                    <Button HorizontalAlignment="Right" Margin="0 0 90 00" Content="Змінити дані"  materialDesign:HintAssist.Foreground="Green" BorderThickness="1" materialDesign:TextFieldAssist.UnderlineBrush="Green" Style="{StaticResource MaterialDesignFlatButton}" Foreground="Green" BorderBrush="Green" FontFamily="Tahoma" Click="Button_ChangeData_Click" />
+                    <Button HorizontalAlignment="Right" Margin="0" Content="Вийти"  materialDesign:HintAssist.Foreground="Green" BorderThickness="1" materialDesign:TextFieldAssist.UnderlineBrush="Green" Style="{StaticResource MaterialDesignFlatButton}" Foreground="Green" BorderBrush="Green" FontFamily="Tahoma" Click="Button_Exit_Click" />
+                </Grid>
+                <Grid Margin="0 5">
+                    <Label Content="Вага: " FontFamily="Tahoma" FontSize="13"/>
+                    <Label x:Name="UserWeight" Content="" Margin="40 0" FontFamily="Tahoma" FontSize="13"/>
+                </Grid>
+                <Grid Margin="0 5">
+                    <Label Content="Зріст: " FontFamily="Tahoma" FontSize="13"/>
+                    <Label x:Name="UserHeight" Content="" Margin="40 0" FontFamily="Tahoma" FontSize="13"/>
+                </Grid>
+                <Grid Margin="0 5">
+                    <Label Content="Вік: " FontFamily="Tahoma" FontSize="13"/>
+                    <Label x:Name="UserAge" Content="" Margin="40 0" FontFamily="Tahoma" FontSize="13"/>
+                </Grid>
+                <Grid Margin="0 5">
+                    <Label Content="Рекомендована кількість ккал в день: " FontFamily="Tahoma" FontSize="13"/>
+                    <Label x:Name="UserKKal" Content="" Margin="235 0 0 0" FontFamily="Tahoma" FontSize="13"/>
+                </Grid>
+                <Grid>
+                    <Button HorizontalAlignment="Left" Width="200" Margin="30 10 0 0" Content="Приклад харчування"  materialDesign:HintAssist.Foreground="Green" BorderThickness="1" materialDesign:TextFieldAssist.UnderlineBrush="Green" Style="{StaticResource MaterialDesignFlatButton}" Foreground="Green" BorderBrush="Green" FontFamily="Tahoma" Click="Button_MealPlan_Click" />
+                    <Button HorizontalAlignment="Right" Width="200" Margin="0 10 30 0" Content="Приклад вправ"  materialDesign:HintAssist.Foreground="Green" BorderThickness="1" materialDesign:TextFieldAssist.UnderlineBrush="Green" Style="{StaticResource MaterialDesignFlatButton}" Foreground="Green" BorderBrush="Green" FontFamily="Tahoma" Click="Button_TrainsExample_Click" />
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
+

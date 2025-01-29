@@ -1,0 +1,874 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2153F018-D758-42D0-A45A-E6F3175EF9F1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Kursach</RootNamespace>
+    <AssemblyName>Kursach</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=3.0.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignColors.3.0.0\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=5.0.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.5.0.0\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.118.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.118.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AbsExcercisesPage.xaml.cs">
+      <DependentUpon>AbsExcercisesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationContext.cs" />
+    <Compile Include="CalculateKKal.cs" />
+    <Compile Include="ChangeDataWindow.xaml.cs">
+      <DependentUpon>ChangeDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExampleExercisesWindow.xaml.cs">
+      <DependentUpon>ExampleExercisesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\AbsExcercises\LateralCrunches.xaml.cs">
+      <DependentUpon>LateralCrunches.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\AbsExcercises\LegLift.xaml.cs">
+      <DependentUpon>LegLift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\AbsExcercises\LegsTucking.xaml.cs">
+      <DependentUpon>LegsTucking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\AbsExcercises\Twisting.xaml.cs">
+      <DependentUpon>Twisting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\DumbbellRow.xaml.cs">
+      <DependentUpon>DumbbellRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\HorizontalBlock.xaml.cs">
+      <DependentUpon>HorizontalBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\Hyperextension.xaml.cs">
+      <DependentUpon>Hyperextension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\Linkage.xaml.cs">
+      <DependentUpon>Linkage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\Pullover.xaml.cs">
+      <DependentUpon>Pullover.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\PullUps.xaml.cs">
+      <DependentUpon>PullUps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\TPull.xaml.cs">
+      <DependentUpon>TPull.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BackExercises\UpperBlockWindow.xaml.cs">
+      <DependentUpon>UpperBlockWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BicepsExcercises\BarLifting.xaml.cs">
+      <DependentUpon>BarLifting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BicepsExcercises\BicepsCurl.xaml.cs">
+      <DependentUpon>BicepsCurl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BicepsExcercises\Hammers.xaml.cs">
+      <DependentUpon>Hammers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BicepsExcercises\IsolatedBicepsСurl.xaml.cs">
+      <DependentUpon>IsolatedBicepsСurl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BicepsExcercises\PullingRopeHandle.xaml.cs">
+      <DependentUpon>PullingRopeHandle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\BicepsExcercises\ScottBenchFift.xaml.cs">
+      <DependentUpon>ScottBenchFift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\CardioExcercises\BikePage.xaml.cs">
+      <DependentUpon>BikePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\CardioExcercises\JoggingPage.xaml.cs">
+      <DependentUpon>JoggingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\CardioExcercises\SwimmingPage.xaml.cs">
+      <DependentUpon>SwimmingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\Bars.xaml.cs">
+      <DependentUpon>Bars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\BlockPress.xaml.cs">
+      <DependentUpon>BlockPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\Butterfly.xaml.cs">
+      <DependentUpon>Butterfly.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\DumbbellPress.xaml.cs">
+      <DependentUpon>DumbbellPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\FlatteningDumbbells.xaml.cs">
+      <DependentUpon>FlatteningDumbbells.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\HorizontalPress.xaml.cs">
+      <DependentUpon>HorizontalPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\HummerPress.xaml.cs">
+      <DependentUpon>HummerPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ChestExcercises\InclinePress.xaml.cs">
+      <DependentUpon>InclinePress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\Calves.xaml.cs">
+      <DependentUpon>Calves.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\HackSquats.xaml.cs">
+      <DependentUpon>HackSquats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\LegCurls.xaml.cs">
+      <DependentUpon>LegCurls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\LegExtensions.xaml.cs">
+      <DependentUpon>LegExtensions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\LegPress.xaml.cs">
+      <DependentUpon>LegPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\Lunges.xaml.cs">
+      <DependentUpon>Lunges.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\RomanianDeadlift.xaml.cs">
+      <DependentUpon>RomanianDeadlift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LegsExcercises\Squats.xaml.cs">
+      <DependentUpon>Squats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LowerBodyExcercises\Calves.xaml.cs">
+      <DependentUpon>Calves.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LowerBodyExcercises\JumpSquats.xaml.cs">
+      <DependentUpon>JumpSquats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\LowerBodyExcercises\Lunge.xaml.cs">
+      <DependentUpon>Lunge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ShouldersExercises\BlockPullDown.xaml.cs">
+      <DependentUpon>BlockPullDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ShouldersExercises\HorizontalDumbbellLift.xaml.cs">
+      <DependentUpon>HorizontalDumbbellLift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ShouldersExercises\RearDeltasReduction.xaml.cs">
+      <DependentUpon>RearDeltasReduction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ShouldersExercises\ShoulderLift.xaml.cs">
+      <DependentUpon>ShoulderLift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ShouldersExercises\ShouldersDumbbellPress.xaml.cs">
+      <DependentUpon>ShouldersDumbbellPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\ShouldersExercises\SmithPress.xaml.cs">
+      <DependentUpon>SmithPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\TricepsExcercises\BlockExtension.xaml.cs">
+      <DependentUpon>BlockExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\TricepsExcercises\DumbbellLift.xaml.cs">
+      <DependentUpon>DumbbellLift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\TricepsExcercises\FrenchPress.xaml.cs">
+      <DependentUpon>FrenchPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\TricepsExcercises\MediumGripBenchPress.xaml.cs">
+      <DependentUpon>MediumGripBenchPress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\TricepsExcercises\ReverseExtension.xaml.cs">
+      <DependentUpon>ReverseExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\UpperBodyExcercises\BackExcercise.xaml.cs">
+      <DependentUpon>BackExcercise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\UpperBodyExcercises\ChairDip.xaml.cs">
+      <DependentUpon>ChairDip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\UpperBodyExcercises\MountainClimbers.xaml.cs">
+      <DependentUpon>MountainClimbers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\UpperBodyExcercises\Plank.xaml.cs">
+      <DependentUpon>Plank.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Exercises\UpperBodyExcercises\PushUps.xaml.cs">
+      <DependentUpon>PushUps.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogInWindow.xaml.cs">
+      <DependentUpon>LogInWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LowerBodyExcercisesPage.xaml.cs">
+      <DependentUpon>LowerBodyExcercisesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MealPlanWindow.xaml.cs">
+      <DependentUpon>MealPlanWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalAccount_Window.xaml.cs">
+      <DependentUpon>PersonalAccount_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationWindow.xaml.cs">
+      <DependentUpon>RegistrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainBackPage.xaml.cs">
+      <DependentUpon>TrainBackPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainBicepsPage.xaml.cs">
+      <DependentUpon>TrainBicepsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainChestPage.xaml.cs">
+      <DependentUpon>TrainChestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainLegsPage.xaml.cs">
+      <DependentUpon>TrainLegsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainShouldersPage.xaml.cs">
+      <DependentUpon>TrainShouldersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrainTricepsPage.xaml.cs">
+      <DependentUpon>TrainTricepsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpperBodyExcercisesPage.xaml.cs">
+      <DependentUpon>UpperBodyExcercisesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
+    <Page Include="AbsExcercisesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExampleExercisesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\AbsExcercises\LateralCrunches.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\AbsExcercises\LegLift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\AbsExcercises\LegsTucking.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\AbsExcercises\Twisting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\DumbbellRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\HorizontalBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\Hyperextension.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\Linkage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\Pullover.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\PullUps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\TPull.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BackExercises\UpperBlockWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BicepsExcercises\BarLifting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BicepsExcercises\BicepsCurl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BicepsExcercises\Hammers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BicepsExcercises\IsolatedBicepsСurl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BicepsExcercises\PullingRopeHandle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\BicepsExcercises\ScottBenchFift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\CardioExcercises\BikePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\CardioExcercises\JoggingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\CardioExcercises\SwimmingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\Bars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\BlockPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\Butterfly.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\DumbbellPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\FlatteningDumbbells.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\HorizontalPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\HummerPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ChestExcercises\InclinePress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\Calves.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\HackSquats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\LegCurls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\LegExtensions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\LegPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\Lunges.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\RomanianDeadlift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LegsExcercises\Squats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LowerBodyExcercises\Calves.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LowerBodyExcercises\JumpSquats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\LowerBodyExcercises\Lunge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ShouldersExercises\BlockPullDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ShouldersExercises\HorizontalDumbbellLift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ShouldersExercises\RearDeltasReduction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ShouldersExercises\ShoulderLift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ShouldersExercises\ShouldersDumbbellPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\ShouldersExercises\SmithPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\TricepsExcercises\BlockExtension.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\TricepsExcercises\DumbbellLift.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\TricepsExcercises\FrenchPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\TricepsExcercises\MediumGripBenchPress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\TricepsExcercises\ReverseExtension.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\UpperBodyExcercises\BackExcercise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\UpperBodyExcercises\ChairDip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\UpperBodyExcercises\MountainClimbers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\UpperBodyExcercises\Plank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Exercises\UpperBodyExcercises\PushUps.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LowerBodyExcercisesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MealPlanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PersonalAccount_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainBackPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainBicepsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainChestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainLegsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainShouldersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainTricepsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpperBodyExcercisesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="PersonalData.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\UpperBlock.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\HorizontalBlock.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\PullUps.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\Linkage.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\TPull.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\DumbbellRow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\Hyperextension.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BackExercises\Pullover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\HorizontalPress.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\InclinePress.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\Butterfly.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\FlatteningDumbbells.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\Bars.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\BlockPress.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\DumbbellPress.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ChestExcercises\HummerPress.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BicepsExcercises\BarLifting.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BicepsExcercises\Hammers.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BicepsExcercises\ScottBenchFift.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BicepsExcercises\IsolatedBicepsСurl.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BicepsExcercises\PullingRopeHandle.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\BicepsExcercises\BicepsCurl.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\TricepsExcercises\BlockExtension.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\TricepsExcercises\FrenchPress.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\TricepsExcercises\DumbbellLift.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\TricepsExcercises\ReverseExtension.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\TricepsExcercises\MediumGripBenchPress.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ShouldersExercises\ShouldersDumbbellPress.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ShouldersExercises\HorizontalDumbbellLift.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ShouldersExercises\RearDeltasReduction.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ShouldersExercises\SmithPress.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ShouldersExercises\BlockPullDown.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\ShouldersExercises\ShoulderLift.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\LegPress.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\RomanianDeadlift.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\Squats.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\Lunges.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\LegExtensions.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\HackSquats.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\Calves.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LegsExcercises\LegCurls.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\UpperBodyExcercises\Plank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\UpperBodyExcercises\PushUps.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\UpperBodyExcercises\BackExcercise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LowerBodyExcercises\Lunge.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LowerBodyExcercises\JumpSquats.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\UpperBodyExcercises\ChairDip.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\UpperBodyExcercises\MountainClimbers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\LowerBodyExcercises\CalvesBodyWeight.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\AbsExcercises\LegsTucking.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\AbsExcercises\Twisting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\AbsExcercises\LateralCrunches.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exercises\AbsExcercises\LegLift.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RunImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BikeImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\SwimmingImage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.5.0.0\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
